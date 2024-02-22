@@ -1,3 +1,3 @@
-# anna_sakkoa
+Flutterilla toteutettu projekti jossa tarkoituksena on tehdä sakkokassa mobiilisovellus.
 
-A new Flutter project.
+Käyttäjä voi lisätä joukkueen, sakkolistan, sakotettavat pelaajat, sakot per pelaaja, sakon syykoodit yms.
