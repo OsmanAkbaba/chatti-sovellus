@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "540397899968",
+    "project_id": "sakkokassa-15fec",
+    "storage_bucket": "sakkokassa-15fec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540397899968:android:f58e016f809c547422dd25",
+        "android_client_info": {
+          "package_name": "com.example.anna_sakkoa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJnCeGDfEfgSJuEr9OanL99Kg3seeZfw4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
