@@ -1,3 +1,2 @@
-Flutterilla toteutettu projekti jossa tarkoituksena on tehdä sakkokassa mobiilisovellus.
+Flutterilla toteutettu chatapp.
 
-Käyttäjä voi lisätä joukkueen, sakkolistan, sakotettavat pelaajat, sakot per pelaaja, sakon syykoodit yms.
