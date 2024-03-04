@@ -29,8 +29,8 @@ class ChatService {
 
     //create new message
     Message newMessage = Message(
-      senderID: currentUserEmail,
-      senderEmail: currentUserID,
+      senderID: currentUserID,
+      senderEmail: currentUserEmail,
       receiverID: receiverId,
       message: message,
       timestamp: timestamp,
@@ -39,10 +39,10 @@ class ChatService {
     //consturct chat room ID for the two user (sorted to ensure uniqueness)
     List<String> ids = [currentUserID, receiverId];
     ids.sort(); //sort the ids (this ensures that the chat room id is unique)
-    String chatRoomID = ids.join("_");
+    String chatRoomID = ids.join('_');
     // add new message to database
     await _firestore
-        .collection("chatRooms")
+        .collection("chat_rooms")
         .doc(chatRoomID)
         .collection("messages")
         .add(newMessage.toMap());
@@ -53,7 +53,7 @@ class ChatService {
     //construct a chatoroom ID for the two users
     List<String> ids = [userID, otherUserID];
     ids.sort();
-    String chatRoomID = ids.join("_");
+    String chatRoomID = ids.join('_');
 
     return _firestore
         .collection("chat_rooms")

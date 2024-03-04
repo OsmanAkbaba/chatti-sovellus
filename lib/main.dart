@@ -1,14 +1,20 @@
 import 'package:anna_sakkoa/services/auth/auth_gate.dart';
-
 import 'package:anna_sakkoa/firebase_options.dart';
-import 'package:anna_sakkoa/themes/light_mode.dart';
+import 'package:anna_sakkoa/themes/theme_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const MainApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {
@@ -18,8 +24,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: /* const*/const  AuthGate(),
-      theme: lightMode,
+      home: /* const*/ const AuthGate(),
+      theme: Provider.of<ThemeProvider>(context).themedata,
     );
   }
 }

@@ -1,4 +1,7 @@
+import 'package:anna_sakkoa/themes/theme_provider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -6,9 +9,36 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        title: Text("A s e t u k s e t")
+        title: const Text("A s e t u k s e t"),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        foregroundColor: const Color.fromARGB(255, 90, 83, 83),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.secondary,
+          borderRadius: BorderRadius.circular(12.0),
         ),
+        margin: const EdgeInsets.all(25.0),
+        padding: const EdgeInsets.all(15.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            //dark mode
+            const Text('Dark Mode'),
+            //Switch toggle
+            CupertinoSwitch(
+              value:
+                  Provider.of<ThemeProvider>(context, listen: false).isDarkMode,
+              onChanged: (value) => Provider
+                  .of<ThemeProvider>(context, listen: false)
+                  .toggleTheme(),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

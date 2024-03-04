@@ -9,20 +9,20 @@ class RegisterPage extends StatelessWidget {
   //email and password textcontroller
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _ConfirmPasswordController =
+  final TextEditingController _confirmPasswordController =
       TextEditingController();
 
   final void Function()? onTap;
 
   void register(BuildContext context) {
     //get auth service
-    final _auth = AuthService();
+    final auth = AuthService();
 
     //if passwords match -> create account
 
-    if (_passwordController.text == _ConfirmPasswordController.text) {
+    if (_passwordController.text == _confirmPasswordController.text) {
       try {
-        _auth.signUpWithEmailPassword(
+        auth.signUpWithEmailPassword(
           _emailController.text,
           _passwordController.text,
         );
@@ -95,7 +95,7 @@ class RegisterPage extends StatelessWidget {
             MyTextField(
               hintText: "Confirm Password",
               obscureText: true,
-              controller: _ConfirmPasswordController,
+              controller: _confirmPasswordController,
             ),
 
             const SizedBox(height: 25),
